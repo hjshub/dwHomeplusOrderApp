@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>동원 홈플러스 | 로그인</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/common.js"></script>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!--favicon-->
+	<link rel="shortcut icon" type="image/x-icon" href="img/common/icon/dwhp_favicon.ico">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/common/icon/apple-touch-icon_76dpi.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/common/icon/apple-touch-icon_120dpi.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/common/icon/apple-touch-icon_152dpi.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/common/icon/apple-touch-icon_180dpi.png">
+</head>
+<body>
+	<div id="wrapper" class="main">
+		<div class="login_form">
+			<div class="title_area">
+				<h1><img src="img/common/logo.png"/ alt="logo"></h1>
+				<strong class="f_md">현장 주문하기</strong>
+			</div>
+
+			<div class="log">
+				<form action="/" method="">
+					<div class="ch_person">
+						<span class="checkForm"><input type="radio" name="r" id="b" checked/><label for="b">영업사원</label></span>
+						<span class="checkForm"><input type="radio" name="r" id="c"/><label for="c">판매사원</label></span>
+					</div>
+					<ul class="inner">
+						<li>
+							<input type="text" value="" placeholder="영업사원 사번을 입력하세요"/>	
+						</li>
+						<li>
+							<input type="text" maxlength="15" value="" placeholder="천리안&#x2F;LOVE동원 아이디를 입력하세요"/>
+						</li>
+						<li>
+							<input type="password" maxlength="15" value="" placeholder="비밀번호를 입력하세요"/>						
+						</li>
+						<li class="apply a-left">
+							<span class="checkForm"><input type="checkbox" id="a"><label for="a">ID&#x2F;사번 저장하기</label></span>
+						</li>				
+					</ul>				
+				</form>	
+			</div>
+		</div>	
+		<span class="btnType_lg btn_fix"><button type="button" class="blue mxh f_s_lg">로그인</button></span>	
+	</div>
+</body>
+</html>	

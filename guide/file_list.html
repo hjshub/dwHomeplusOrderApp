@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>파일 리스트 | 동원 홈플러스 주문 App</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/file_list.css">
+	</head>
+	<body>	
+		<div id="wrapper">
+			<div class="container">
+				<section class="ko">
+					<h2>파일리스트(front)</h2>
+					<div class="table-style">
+						<table>
+							<caption>파일 목록(NO, 구분, 파일경로)</caption>
+							<colgroup>
+								<col style="width:7%;"/>
+								<col style="width:12%;"/>
+								<col style="width:20%;"/>
+								<col style="width:auto;"/>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">NO</th>
+									<th scope="col" colspan="2">구분</th>
+									<th scope="col">파일경로</th>
+								</tr>
+							</thead>
+							<tfoot></tfoot>
+							<tbody>
+								<tr>
+									<td class="count"></td>
+									<td colspan="2">메인</td>
+									<td><a href="../html/main.html" target="_blank">main.html</a></td>
+								</tr>
+								<tr>
+									<td class="count"></td>
+									<td colspan="2">로그인</td>
+									<td><a href="../html/login.html" target="_blank">login.html</a></td>
+								</tr>
+								<tr>
+									<td class="count"></td>
+									<td colspan="2">주문 등록 페이지</td>
+									<td><a href="../html/order_register.html" target="_blank">order_register.html</a></td>
+								</tr>
+								<tr>
+									<td class="count"></td>
+									<td colspan="2">주문 상세 페이지</td>
+									<td><a href="../html/order_view.html" target="_blank">order_view.html</a></td>
+								</tr>
+								<tr>
+									<td class="count"></td>
+									<td colspan="2">에러 페이지</td>
+									<td><a href="../html/error.html" target="_blank">error.html</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+			</div>		
+		</div>
+		<script>
+			var counts = document.querySelectorAll('.count');
+
+			for(var i=0; i < counts.length; i++) counts[i].innerHTML = i + 1;
+		</script>
+	</body>
+</html>	
+	  	

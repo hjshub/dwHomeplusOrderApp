@@ -1,0 +1,242 @@
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>동원 홈플러스 | 주문등록</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/common.js"></script>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!--favicon-->
+	<link rel="shortcut icon" type="image/x-icon" href="img/common/icon/dwhp_favicon.ico">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/common/icon/apple-touch-icon_76dpi.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/common/icon/apple-touch-icon_120dpi.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/common/icon/apple-touch-icon_152dpi.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/common/icon/apple-touch-icon_180dpi.png">
+</head>
+<body>	
+	<div id="wrapper">
+		<!-- #header -->
+		<header id="header">
+			<h1 class="title"><a href="javascript:history.go(-1);" class="f_bd f_s_xlg">주문등록</a></h1>
+			<div class="order_view right">
+				<span class="btnType"><a href="#" onclick="">주문조회</a></span>		
+			</div>
+		</header>					
+		<!--//header -->
+
+		<div id="container">
+			<div class="order_info register">
+				<form>
+					<fieldset>
+						<ul class="list account">
+							<li>
+								<h2>거래처명</h2>
+								<div class="insert">
+									<span class="ellipsis">17717)<br/>홈플러스P 강서점(직납)</span>
+									<button type="button" class="search" onclick="searchPop('account',this);"></button>
+								</div>
+							</li>
+						</ul>
+						<ul class="list obj">
+							<li>
+								<h2>자재명</h2>
+								<div class="insert">
+									<span class="ellipsis">31514)<br/>신)개성왕만두 1.2kg</span>
+									<button type="button" class="search" onclick="searchPop('material',this);"></button>
+								</div>
+								<div class="today"><strong>점포입고일</strong><em class="f_lt">2019년 01월 11일 일요일</em></div>
+								<dl>
+									<dt>요청수량</dt>
+									<dd>
+										<input type="number" value="" name="" maxlength="15" class="half">
+										<span>박스</span>
+									</dd>
+								</dl>
+								<dl>
+									<dt>비고</dt>
+									<dd class="etc">
+										<textarea maxlength="200"></textarea>
+									</dd>
+								</dl>								
+							</li>
+						</ul>
+						<div class="addList">
+							<a href="javascript:void(0);" onclick="addList();"><img src="img/common/add_list.png"/></a>
+						</div>
+					</fieldset>
+				</form>
+			</div>	
+		</div>
+		<!--//container -->
+		<span class="btnType_lg btn_fix"><button type="button" class="blue mxh f_s_lg">저장</button></span>	
+
+		<div class="layer_pop" id="account">
+			<div class="pop_heading f_bd">
+				거래처검색
+				<span class="btn-closepop"><img src="img/common/btn_close2.png"/></span>
+			</div>
+			<div class="list_cont">
+				<p class="f_lt">총 <em class="description f_md">10건</em>이 검색되었습니다.</p>
+				<p class="f_lt">거래처코드와 지점명이 노출됩니다.</p>
+				<div class="result">
+					<ul class="itemList">
+						<li class="selected">
+							<div class="item_name">
+								<span>17717)</span>
+								<span>홈플러스P 강서점(직납)</span>
+							</div>
+						</li>
+						<li>
+							<div class="item_name">
+								<span>17717)</span>
+								<span>홈플러스P 강서점(직납)</span>
+							</div>
+						</li>
+						<li>
+							<div class="item_name">
+								<span>17711)</span>
+								<span>홈플러스P 강서점(직납)</span>
+							</div>
+						</li>
+						<li>
+							<div class="item_name">
+								<span>17727)</span>
+								<span>홈플러스P 강서점(직납)</span>
+							</div>
+						</li>
+						<li>
+							<div class="item_name">
+								<span>17415)</span>
+								<span>홈플러스P 강서점(직납)</span>
+							</div>
+						</li>
+						<li>
+							<div class="item_name">
+								<span>17276)</span>
+								<span>홈플러스P 강서점(직납)</span>
+							</div>
+						</li>
+					</ul>
+					
+					<!-- 검색결과 없음 -->
+					<!-- 
+					<div class="resultNone">
+						<p class="f_lt"><em class="description f_md">&ldquo;홈플러스 동원점&rdquo;</em>으로는 검색결과가 없습니다.<br/>다시 검색 해주세요</p>
+					</div>	
+					-->				
+				</div>
+				<!-- //result -->	
+			</div>
+			<!--//list_cont-->
+			<span class="btnType_lg btn_fix"><button type="button" class="blue mxh f_s_lg">선택</button></span>
+		</div>
+		<!--//account-->
+		
+		<div class="layer_pop" id="material">
+			<div class="pop_heading f_bd">
+				자재검색
+				<span class="btn-closepop"><img src="img/common/btn_close2.png"/></span>
+			</div>
+			<div class="list_cont">
+				<!--검색 폼 영역-->
+				<div class="searchWrap">
+					<h2 class="hidden_El">자재명 검색</h2>
+					<form action="/" method="">
+						<fieldset>
+							<legend>자재명 검색</legend>
+							<label for="total_search" class="hidden_El">검색어 입력</label>
+							<input type="text" id="total_search" class="search" title="전체 검색" placeholder="자재명 또는 자재코드 입력">
+							<button type="submit" class="hidden_Txt">검색</button>
+						</fieldset>
+					</form>
+				</div>
+				<!--//검색 폼 영역-->		
+				<p class="f_lt">총 <em class="description f_md">10건</em>이 검색되었습니다.</p>
+				<p class="f_lt">자재코드와 자재명이 노출됩니다.</p>
+				<div class="result">
+					<ul class="itemList">
+						<li>
+							<div class="item_name">
+								<span>17714)</span> 
+								<span>신)개성왕만두 1.2kg</span>
+							</div>
+							<div class="iteminfo">
+								<span class="btn_item">
+									<a href="javascript:void(0);" onclick="listOn(this);"><em>자재 재고량 보기</em></a>
+								</span>
+								<div>
+									<ul class="inner">
+										<li><span class="f_lt">입수</span><em class="f_md">8</em></li>
+										<li><span class="f_lt">전일판매</span><em class="f_md">8</em></li>
+										<li><span class="f_lt">당일판매</span><em class="f_md">20</em></li>
+										<li><span class="f_lt">익일입고</span><em class="f_md">4</em></li>
+										<li><span class="f_lt">현매장재고</span><em class="f_md">8</em></li>
+										<li><span class="f_lt">재고합</span><em class="f_md">55</em></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item_name">
+								<span>17714)</span> 
+								<span>신)개성왕만두 1.2kg</span>
+							</div>
+							<div class="iteminfo">
+								<span class="btn_item">
+									<a href="javascript:void(0);" onclick="listOn(this);"><em>자재 재고량 보기</em></a>
+								</span>
+								<div>
+									<ul class="inner">
+										<li><span class="f_lt">입수</span><em class="f_md">8</em></li>
+										<li><span class="f_lt">전일판매</span><em class="f_md">8</em></li>
+										<li><span class="f_lt">당일판매</span><em class="f_md">20</em></li>
+										<li><span class="f_lt">익일입고</span><em class="f_md">4</em></li>
+										<li><span class="f_lt">현매장재고</span><em class="f_md">8</em></li>
+										<li><span class="f_lt">재고합</span><em class="f_md">55</em></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item_name">
+								<span>17714)</span> 
+								<span>신)개성왕만두 1.2kg</span>
+							</div>
+							<div class="iteminfo">
+								<span class="btn_item">
+									<a href="javascript:void(0);" onclick="listOn(this);"><em>자재 재고량 보기</em></a>
+								</span>
+								<div>
+									<ul class="inner">
+										<li><span class="f_lt">입수</span><em class="f_md">8</em></li>
+										<li><span class="f_lt">전일판매</span><em class="f_md">8</em></li>
+										<li><span class="f_lt">당일판매</span><em class="f_md">20</em></li>
+										<li><span class="f_lt">익일입고</span><em class="f_md">4</em></li>
+										<li><span class="f_lt">현매장재고</span><em class="f_md">8</em></li>
+										<li><span class="f_lt">재고합</span><em class="f_md">55</em></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+						
+					<!-- 검색결과 없음 -->
+					<!-- 
+					<div class="resultNone">
+						<p class="f_lt"><em class="description f_md">&ldquo;구)개성왕만두&rdquo;</em>으로는 검색결과가 없습니다.<br/>다시 검색 해주세요</p>
+					</div>
+					-->
+				</div>
+				<!-- //result -->
+			</div>
+			<!--//list_cont-->
+			<span class="btnType_lg btn_fix"><button type="button" class="blue mxh f_s_lg">선택</button></span>	
+		</div>
+		<!--//material-->				
+	</div>
+</body>
+</html>	
+	  	
